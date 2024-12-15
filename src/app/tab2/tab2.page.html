@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Resultado
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,6 +12,17 @@
       <ion-title size="large">Tab 2</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-grid>
+    <ion-row style="background-color: #28bb50; font-weight: bold;">
+      <ion-col>Receita</ion-col>
+      <ion-col>Despesa</ion-col>
+      <ion-col>Resultado</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let receita of receitas" >
+      <ion-col>{{ receita.valor }}</ion-col>
+      <ion-col *ngFor="let despesa of despesas">{{ despesa.valor }}</ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+   </ion-grid>
 </ion-content>
+<ion-footer>App criado pelo AnderShow</ion-footer>

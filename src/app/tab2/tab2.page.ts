@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-  constructor() {}
-
+  receitas: {tipo: string; valor: number; data: string}[] = [];
+  despesas: {tipo: string; valor: number; data: string}[] = [];
+  constructor(private sharedService: SharedService) {
+    this.sharedService.currentReceitas.subscribe((receita) =>{
+      this.receitas = receita;
+    })
+    this.sharedService.currentDespesas.subscribe((despesa) =>{
+    this.despesas = despesa;
+    })
+  }
+  ngOnInit(){
+  
+  }
+ 
 }
