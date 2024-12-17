@@ -19,10 +19,23 @@
       <ion-col>Resultado</ion-col>
     </ion-row>
     <ion-row *ngFor="let receita of receitas" >
-      <ion-col>{{ receita.valor }}</ion-col>
-      <ion-col *ngFor="let despesa of despesas">{{ despesa.valor }}</ion-col>
+      <ion-col>{{ receita.valor  | currency:'BRL'}}</ion-col>
+      <ion-col ></ion-col>
       <ion-col></ion-col>
     </ion-row>
+    <ion-row *ngFor="let despesa of despesas">
+      <ion-col></ion-col>
+      <ion-col>{{ despesa.valor  | currency:'BRL'}}</ion-col>
+      <ion-col></ion-col>      
+    </ion-row>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col [style.color]="calcSaldo() >= 0 ? 'green' : 'red'">
+        {{calcSaldo() | currency:'BRL'}}
+      </ion-col>      
+    </ion-row>
+
    </ion-grid>
 </ion-content>
 <ion-footer>App criado pelo AnderShow</ion-footer>

@@ -22,7 +22,7 @@
   </ion-row>
   <ion-row *ngFor="let receita of receitas">
     <ion-col>{{receita.tipo}}</ion-col>
-    <ion-col>{{receita.valor}}</ion-col>
+    <ion-col>{{receita.valor  | currency:'BRL'}}</ion-col>
     <ion-col>{{receita.data}}</ion-col>
   </ion-row>
  </ion-grid>

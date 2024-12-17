@@ -20,7 +20,7 @@
     </ion-row>
     <ion-row *ngFor="let despesa of despesas">
       <ion-col>{{despesa.tipo}}</ion-col>
-      <ion-col>{{despesa.valor}}</ion-col>
+      <ion-col>{{despesa.valor  | currency:'BRL'}}</ion-col>
       <ion-col>{{despesa.data}}</ion-col>
     </ion-row>
    </ion-grid>
